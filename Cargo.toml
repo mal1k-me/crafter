@@ -19,8 +19,8 @@ serde_json = "1.0"
 serde_yaml = "0.9"
 toml = "0.8"
 
-# HTTP client (most popular)
-reqwest = { version = "0.11", features = ["json"] }
+# HTTP client (TLS via rustls for portable cross-compiles)
+reqwest = { version = "0.11", default-features = false, features = ["json", "rustls-tls"] }
 
 # Error handling (modern standard)
 anyhow = "1.0"
