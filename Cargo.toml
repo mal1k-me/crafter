@@ -1,0 +1,48 @@
+[package]
+name = "crafter"
+version = "0.1.0"
+edition = "2021"
+authors = ["Crafter Contributors"]
+description = "Local CodeCrafters CLI - Run challenges offline"
+license = "MIT"
+
+[dependencies]
+# CLI (industry standard)
+clap = { version = "4.5", features = ["derive"] }
+
+# Async runtime (de facto standard)
+tokio = { version = "1.35", features = ["full"] }
+
+# Serialization (most widely used)
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+toml = "0.8"
+
+# HTTP client (most popular)
+reqwest = { version = "0.11", features = ["json"] }
+
+# Error handling (modern standard)
+anyhow = "1.0"
+thiserror = "1.0"
+
+# File operations
+tar = "0.4"
+flate2 = "1.0"
+
+# Path utilities
+home = "0.5"
+
+# Utilities
+once_cell = "1.19"  # Lazy static initialization (used by cargo, ripgrep)
+
+# Output & formatting (battle-tested, professional)
+atty = "0.2"  # TTY detection (used by cargo, ripgrep, fd)
+termcolor = "1.4"  # Terminal colors (used by cargo, rustc, ripgrep)
+indicatif = "0.17"  # Progress bars (uses termcolor internally)
+comfy-table = "7.1"  # Table formatting
+
+[dev-dependencies]
+tempfile = "3.8"
+assert_cmd = "2.0"
+predicates = "3.0"
